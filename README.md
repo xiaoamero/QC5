@@ -9,7 +9,7 @@ It consists of three basic components: **ansatze**, **hamiltonians**, and **algo
 Parametrized Quantum Circuit (PQC) used to construct quantum circuits that simulate the electronic structure of molecules:
 
 - **Trotterized Unitary Coupled Cluster**: RuCCSD, RuCCGSD1, RuCCGSD2, UuCCSD, UuCCGSD1, UuCCGSD2,
-- **Hardware Efficient Ansatz (HEA)**: ry_linear, ry_full, ry_cascade, EfficientSU2 (RyRz), ASWAP, [PCHEA](https://doi.org/10.48550/arXiv.2105.10275)(our work),
+- **Hardware Efficient Ansatz (HEA)**: ry_linear, ry_full, ry_cascade, EfficientSU2 (RyRz), ASWAP, [PCHEA](https://arxiv.org/pdf/2307.03563.pdf)(our work),
 - **Hamiltonian Variation Ansatz (HVA)**: hva_hubbard, hva_heisenberg,
 - **Adaptive ansatz**: Fermionic-adapt-vqe, Qubit-adapt-vqe.
 
@@ -38,7 +38,7 @@ Some variational quantum algorithms:
 - **VQE**: The variational quantum eigensolver is a hybrid quantum-classical approach for solving quantum many-body problems.  
 - **VQD**: The Variational Quantum Deflation is an extension of the VQE for calculating electronic excited state energies.
 - **VQR**: The variational quantum response approach, for computing linear response properties.  
-- **GlobalVQE**: A layerwise optimization strategy for HEA/HVA, this guarantees that the optimized energy decreases monotonically with respect to $L$ for our proposed [PCHEA](https://doi.org/10.48550/arXiv.2105.10275).
+- **GlobalVQE**: A layerwise optimization strategy for HEA/HVA, this guarantees that the optimized energy decreases monotonically with respect to $L$ for our proposed [PCHEA](https://arxiv.org/pdf/2307.03563.pdf).
 
 ## Notice
 
