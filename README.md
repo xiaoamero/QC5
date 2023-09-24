@@ -24,8 +24,8 @@ where $a^{\dagger}_{p}a_{p}$ are fermionic creation (annihilation) operators. Th
 
 
 - **Fermion-hubbard Hamiltonian**
-$$\hat{H}=-t\sum_{<i,j>}\sum_{\sigma}(a_{i\sigma}^{\dagger}a_{j\sigma}+\mathrm{h.c.}),$$
-with hopping amplitudes $t$ between nearest neighbors $<i,j>$, on-site repulsion energy $U>0$, $\sigma$ reprents spin-up ($\alpha$) and spin-down ($\beta$).  
+$$\hat{H}=-t\sum_{<i,j>}\sum_{\sigma}(a_{i\sigma}^{\dagger}a_{j\sigma}+\mathrm{h.c.}) + U\sum_{i}\hat{n}_{i\alpha}\hat{n}_{i\beta},$$
+with hopping amplitudes $t$ between nearest neighbors $i$ and $j$, on-site repulsion energy $U>0$, $\sigma$ reprents spin-up ($\alpha$) and spin-down ($\beta$).  
 
 
 - **Heisenberg Hamiltonian** $$\hat{H} = -\frac{J}{2}\sum_{<i,j>}\sigma_{i}\cdot\sigma_{j},$$
