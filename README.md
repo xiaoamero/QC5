@@ -23,7 +23,7 @@ These hamiltonians can be used to model the behavior of electrons in molecules:
 where $a^{\dagger}_{p}a_{p}$ are fermionic creation (annihilation) operators. The coefficients $[p|h|q]$ and $[ps|qr]$ are the one-electron and two-electron molecular integrals in Mulliken notations, respectively, which can be computed from [PySCF](https://github.com/pyscf/pyscf.git).  
 
 
-- **Fermion-hubbard Hamiltonian** $$\hat{H}=-t\sum_{<i,j>}{\sum_{\sigma}{(}}a_{i\sigma}^{\dagger}a_{j\sigma}+\mathrm{h}.\mathrm{c}.)+U\sum_i{\hat{n}_{i\alpha}}\hat{n}_{i\beta},$$
+- **Fermion-hubbard Hamiltonian** $$\hat{H}=-t\sum_{<i,j>}{\sum_{\sigma}(a_{i\sigma}^{\dagger}a_{j\sigma}+\mathrm{h}.\mathrm{c}.)+U\sum_{i}\hat{n}_{i\alpha}}\hat{n}_{i\beta},$$
 with hopping amplitudes $t$ between nearest neighbors $<i,j>$, on-site repulsion energy $U>0$, $\sigma$ reprents spin-up ($\alpha$) and spin-down ($\beta$).  
 
 
