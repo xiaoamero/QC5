@@ -17,7 +17,8 @@ Parametrized Quantum Circuit (PQC) used to construct quantum circuits that simul
 
 These hamiltonians can be used to model the behavior of electrons in molecules:
 
-- **Molecular Hamiltonian** $$\hat{H} = \sum_{pq}[p|h|q]a^{\dagger}_ {p}a_ {q}+\sum_{pqrs}\frac{1}{2}[ps|qr]a^{\dagger}_ {p}a^{\dagger}_ {q}a_{r}a_{s}+E_{NN},$$  
+- **Molecular Hamiltonian** $$\hat{H} = \sum_{pq}[p|h|q]a^{\dagger}_ {p}a_ {q}+\sum_{pqrs}\frac{1}{2}[ps|qr]a^{\dagger}_ {p}a^{\dagger}_ {q}a_{r}a_{s}+E_{NN}, \\
+[p|h|q] = \int\,dx\phi^{*}_ {p}(x)\hat{h}\phi_ {q}(x),$$
 where $a^{\dagger}_ {p}a_{p}$ are fermionic creation (annihilation) operators. The coefficients $[p|h|q]$ and $[ps|qr]$ are the one-electron and two-electron molecular integrals in Mulliken notations, respectively, which can be computed from [PySCF](https://github.com/pyscf/pyscf.git).  
 
 
