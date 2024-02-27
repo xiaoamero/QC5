@@ -3,9 +3,10 @@ from mindquantum.core.circuit import decompose_single_term_time_evolution
 from mindquantum.core.operators import QubitOperator, FermionOperator, TimeEvolution
 from mindquantum.algorithm.nisq.chem.transform import Transform
 from mindquantum.core.operators.utils import hermitian_conjugated
-from QC_master.q1_ansatz import *
-from QC_master.q2_xyz.PQC_Funs import get_expect_value_v2,get_scipy_optimized_vqe
-from QC_master.q2_xyz.FerOp_QubitOp import get_qubit_opVdV
+from QC5.ansatze.ucc import *
+from QC5.algorithms.grad_ops_wrapper import get_expect_value_v2
+from QC5.algorithms.vqe import get_scipy_optimized_vqe
+from QC5.hamiltonians.FerOp_QubitOp import get_qubit_opVdV
 from functools import partial
 from multiprocessing import Pool
 
@@ -122,8 +123,9 @@ def generate_operator_pool(nqubits,nelec,pool_type,adapt_type):
     qop come from unitary CCSD or by user defined """
     
     uccsd_dic = {'RuCCSD':RuCCSD,'RuCCGSD1':RuCCGSD1,'RuCCGSD2':RuCCGSD2,
-                'UuCCSD':UuCCSD,'UuCCGSD1':UuCCGSD1,'UuCCGSD2':UuCCGSD2,
-                'NuCCGSD2':NuCCGSD2,'NuCCSD':NuCCSD,'FuCCGSD2':FuCCGSD2}
+                 'UuCCSD':UuCCSD,'UuCCGSD1':UuCCGSD1,'UuCCGSD2':UuCCGSD2,
+                 'NuCCGSD2':NuCCGSD2,'NuCCSD':NuCCSD,'FuCCGSD2':FuCCGSD2}
+    
     if 'Ru' in pool_type:
         t1,t2 = get_random_rccsd_type_int_t1_t2(nelec,nqubits//2)
         UCCSD = uccsd_dic[pool_type](nelec, t1, t2,'jordan_wigner')
@@ -258,7 +260,7 @@ def grad_measurement(adapt_info2,qubit_hamiltonian,operator_pool,threshold,maxcy
         return False,pick_A,gmax,gconv
     
 def adapt_vqe(nqubits,nelec,cir_ref,qubit_hamiltonian,pool_type,ncore,adapt_type='qubit_adapt',
-              threshold=1e-3,initial_type='warm_start',maxcycle=600,
+              threshold=1e-6,initial_type='warm_start',maxcycle=600,
               vqe_tol=1e-9,vqe_printdetails=False,vqe_savefname='No',restart_load=False):
     """ 
     Input:
