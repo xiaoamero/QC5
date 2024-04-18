@@ -109,15 +109,15 @@ def get_qubit_aniso_np(nqubits):
         npartical += qc*qa
     return npartical
 
-def get_qubit_aniso_na_nb(nqubits):
-    qna = QubitOperator()
-    qnb = QubitOperator()
-    for i in range(0,nqubits,2):
-        qc = 0.5*(QubitOperator('X'+str(i))-1j*QubitOperator('Y'+str(i))) # creation operator
-        qa = 0.5*(QubitOperator('X'+str(i))+1j*QubitOperator('Y'+str(i))) # annihition operator
-        qna += qc*qa
-    for i in range(1,nqubits,2):
-        qc = 0.5*(QubitOperator('X'+str(i))-1j*QubitOperator('Y'+str(i))) # creation operator
-        qa = 0.5*(QubitOperator('X'+str(i))+1j*QubitOperator('Y'+str(i))) # annihition operator
-        qnb += qc*qa
-    return qna,qnb
+#def get_qubit_aniso_na_nb(nqubits):
+#    qna = QubitOperator()
+#    qnb = QubitOperator()
+#    for i in range(0,nqubits,2):
+#        qc = 0.5*(QubitOperator('X'+str(i))-1j*QubitOperator('Y'+str(i))) # creation operator
+#        qa = 0.5*(QubitOperator('X'+str(i))+1j*QubitOperator('Y'+str(i))) # annihition operator
+#        qna += qc*qa
+#    for i in range(1,nqubits,2):
+#        qc = 0.5*(QubitOperator('X'+str(i))-1j*QubitOperator('Y'+str(i))) # creation operator
+#        qa = 0.5*(QubitOperator('X'+str(i))+1j*QubitOperator('Y'+str(i))) # annihition operator
+#        qnb += qc*qa
+#    return qna,qnb
