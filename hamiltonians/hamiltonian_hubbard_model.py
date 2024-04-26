@@ -345,11 +345,11 @@ def get_fermion_hubbard_model_2D(size,U,t=1,pbc=False):
     # on-site
     ham2 = FermionOperator()
     for i in range(nsite):
-        aa = FermionOperator(str(i)+'^ '+str(i)+' ')-0.5
-        bb = FermionOperator(str(i+nsite)+'^ '+str(i+nsite)+' ')-0.5
+        aa = FermionOperator(str(i)+'^ '+str(i)+' ')
+        bb = FermionOperator(str(i+nsite)+'^ '+str(i+nsite)+' ')
         ham2 += aa*bb
     
-    ham = (ham1+hermitian_conjugated(ham1))*-t + ham2*U/t
+    ham = (ham1+hermitian_conjugated(ham1))*-t + ham2*U
     
     print('Fermion-hubbard-model size:',size,', PBC:',pbc)
     return ham
